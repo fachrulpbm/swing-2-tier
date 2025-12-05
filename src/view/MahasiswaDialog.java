@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Dimension;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -8,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 import model.Mahasiswa;
 import net.miginfocom.swing.MigLayout;
@@ -33,7 +35,6 @@ public class MahasiswaDialog extends JDialog {
         this.mahasiswa = mahasiswaToEdit;
         setupComponents();
         
-        // Isi field dengan data lama
         nimField.setText(mahasiswaToEdit.getNim());
         namaField.setText(mahasiswaToEdit.getNama());
         jurusanField.setText(mahasiswaToEdit.getJurusan());
@@ -48,7 +49,11 @@ public class MahasiswaDialog extends JDialog {
         add(new JLabel("Jurusan"), "");
         add(jurusanField, "growx, wrap");
 
-        JPanel buttonPanel = new JPanel(new MigLayout("insets 0", "[]10[]"));
+        saveButton.setBackground(UIManager.getColor("Button.default.background"));
+        saveButton.setForeground(UIManager.getColor("Button.default.foreground"));
+        saveButton.setFont(saveButton.getFont().deriveFont(Font.BOLD));
+
+        JPanel buttonPanel = new JPanel(new MigLayout("", "[]10[]"));
         cancelButton.addActionListener(e -> dispose());
         buttonPanel.add(cancelButton);
         buttonPanel.add(saveButton);

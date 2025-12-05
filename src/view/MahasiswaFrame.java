@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Dimension;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,6 +11,8 @@ import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+
 import net.miginfocom.swing.MigLayout;
 import view.tablemodel.MahasiswaTableModel;
 
@@ -30,20 +33,19 @@ public class MahasiswaFrame extends JFrame {
     }
 
     private void initializeUI(){
-        setTitle("EduCore - Mahasiswa Management");
+        setTitle("EduCore - Management Mahasiswa");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new MigLayout("fill, insets 20", "[grow]", "[]20[]20[]10[grow][][]"));
+        setLayout(new MigLayout("fill, insets 20", "[grow]", "[]10[]10[]10[grow]10[][]"));
 
         mahasiswaTable.setModel(mahasiswaTableModel);
-        mahasiswaTable.setRowHeight(40);
         progressBar.setStringPainted(true);
 
-        add(new JLabel("Mahasiswa List"), "wrap");
-        add(createSearchPanel(), "wrap, growx");
-        add(createButtonPanel(), "wrap, growx");
-        add(new JScrollPane(mahasiswaTable), "grow, wrap");
-        add(progressBar, "growx, h 30!, wrap");
-        add(totalRecordsLabel, "right");
+        add(new JLabel("List Mahasiswa"), "wrap, span 2");
+        add(createSearchPanel(), "growx");
+        add(createButtonPanel(), "wrap, right");
+        add(new JScrollPane(mahasiswaTable), "grow, wrap, span 2");
+        add(progressBar, "growx, h 20!, wrap, span 2");
+        add(totalRecordsLabel, "right, span 2");
 
         pack();
         setMinimumSize(new Dimension(1000, 600));
@@ -51,17 +53,23 @@ public class MahasiswaFrame extends JFrame {
     }
 
     private JPanel createSearchPanel() {
-        JPanel panel = new JPanel(new MigLayout("insets 0"));
+        JPanel panel = new JPanel(new MigLayout(""));
         panel.add(new JLabel("Search:"));
         panel.add(searchField, "growx");
         return panel;
     }
 
     private JPanel createButtonPanel() {
-        JPanel panel = new JPanel(new MigLayout("insets 0"));
-        panel.add(addButton);
-        panel.add(refreshButton);
+        JPanel panel = new JPanel(new MigLayout("right"));
+        
+        addButton.setBackground(UIManager.getColor("Button.default.background"));
+        addButton.setForeground(UIManager.getColor("Button.default.foreground"));
+        addButton.setFont(addButton.getFont().deriveFont(Font.BOLD));
+        
         panel.add(deleteButton);
+        panel.add(refreshButton);
+        panel.add(addButton);
+        
         return panel;
     }
 
