@@ -35,14 +35,14 @@ public class MahasiswaFrame extends JFrame {
     private void initializeUI(){
         setTitle("EduCore - Management Mahasiswa");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new MigLayout("fill, insets 20", "[grow]", "[]10[]10[]10[grow]10[][]"));
+        setLayout(new MigLayout("fill, insets 20", "[grow]", "[]10[]10[grow]10[]10[]"));
 
         mahasiswaTable.setModel(mahasiswaTableModel);
         progressBar.setStringPainted(true);
 
         add(new JLabel("List Mahasiswa"), "wrap, span 2");
-        add(createSearchPanel(), "growx");
-        add(createButtonPanel(), "wrap, right");
+        add(createSearchPanel(), "growx, w 80%");
+        add(createButtonPanel(), "wrap, right, w 20%");
         add(new JScrollPane(mahasiswaTable), "grow, wrap, span 2");
         add(progressBar, "growx, h 20!, wrap, span 2");
         add(totalRecordsLabel, "right, span 2");
