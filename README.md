@@ -1,5 +1,30 @@
 # swing-2-tier
-Penerapan 2-Tier Architecture Pattern (Client Tier, Data Tier) dan Layered Architecture Pattern (Presentation Layer, Business Logic Layer, Data Access Layer, Data Source Layer) pada studi kasus Aplikasi Desktop Java Swing menggunakan pustaka MigLayout dan FlatLaf, serta DBMS MySql, dan mendukung eksekusi background menggunakan SwingWorker<br><br>
+Penerapan 2-Tier Architecture Pattern (Client Tier, Data Tier) dan Layered Architecture Pattern (Presentation Layer, Business Logic Layer, Data Access Layer, Data Source Layer) pada studi kasus Aplikasi Desktop Java Swing menggunakan pustaka MigLayout dan FlatLaf, yang terhubung ke DBMS MySql, serta mendukung eksekusi background menggunakan SwingWorker sehingga UI tetap interaktif (tidak mengalami UI Freezing)<br><br>
+
+<h3>2-Tier Architecture Pattern</h3>
+<ol>
+  <li><b>Client-Tier (Java Swing)</b> https://github.com/fachrulpbm/swing-2-tier</li>
+    <ul>
+      <li><b>Presentation Layer</b> (MVC Pattern)</li>
+        <ul>
+          <li>model</li>
+          <li>view</li>
+          <li>controller</li>
+          <li>service</li>
+          <li>dao</li>
+          <li>worker (background thread)</li>
+          <li>config</li>
+        </ul>
+    </ul>
+  <li><b>Data-Tier (DBMS MySQL)</b></li>
+    <ul>
+      <li><b>Data Source Layer</b></li>
+        <ul>
+          <li>Database Engine</li>
+        </ul>
+    </ul>  
+</ol>
+
 <img width="986" height="634" alt="image" src="https://github.com/user-attachments/assets/181f2064-1ca3-4a2c-9e1d-12a79ab0479e" />
 <br><br>
 <img width="986" height="634" alt="image" src="https://github.com/user-attachments/assets/12724300-eb6b-42e6-ab35-93d91e331d63" />
