@@ -25,7 +25,7 @@ Penerapan 2-Tier Architecture Pattern (Client Tier, Data Tier) dan Layered Archi
     </ul>  
 </ol>
 
-<br><br>
+<br>
 
 <img width="986" height="634" alt="image" src="https://github.com/user-attachments/assets/181f2064-1ca3-4a2c-9e1d-12a79ab0479e" />
 <br><br>
